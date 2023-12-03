@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Upload and Display</title>
+    <title>Image Edit</title>
     <style>
         body {
             display: flex;
@@ -20,6 +20,14 @@
             max-width: 100%;
             max-height: 400px;
         }
+
+        input[type="number"] {
+            width: 60px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
     </style>
     <script src="editimage.js"></script>
 </head>
@@ -28,8 +36,32 @@
         <input type="file" id="imageInput" accept="image/*">
         <button type="button" id="submitBtn">Submit</button>
     </form>
-    <canvas id="imageCanvas"></canvas>
-        
-    </script>
+
+    <div>
+        <label for="cropX">Crop X:</label>
+        <input type="number" id="cropX" value="0">
+        <label for="cropY">Crop Y:</label>
+        <input type="number" id="cropY" value="0">
+        <button type="button" id="applyCropBtn">Apply Crop</button>
+        <button type="button" id="undoCropBtn">Undo Crop</button>
+    </div>
+
+<!-- Previous code remains unchanged -->
+
+<div>
+  <label for="resizeX">Resize X (pixels):</label>
+  <input type="number" id="resizeX" value="100">
+  <label for="resizeY">Resize Y (pixels):</label>
+  <input type="number" id="resizeY" value="100">
+  <button type="button" id="resizeBtn">Resize Image</button>
+  <button type="button" id="undoResizeBtn">Undo Resize</button>
+</div>
+
+<button type="button" id="downloadBtn">Download Modified Image</button>
+
+<canvas id="imageCanvas"></canvas>
+</body>
+</html>
+
 </body>
 </html>
